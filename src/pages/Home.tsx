@@ -58,14 +58,14 @@ export default function Home() {
         {/* Mobile Hero Content */}
         <div className="relative w-full px-6 flex flex-col items-center text-center lg:hidden z-10 pt-24 h-full pb-12">
           <div className="flex-1 flex items-center justify-center w-full mt-10">
-            <svg viewBox="0 0 500 200" className="w-full drop-shadow-lg mix-blend-overlay opacity-90 overflow-visible">
-              <path id="luxury-curve" d="M 0,160 Q 250,50 500,160" fill="transparent" />
-              <text className="font-serif fill-[#e4f08e]" fontSize="120" textAnchor="middle" letterSpacing="8">
-                <textPath href="#luxury-curve" startOffset="50%">
-                  LUXURY
-                </textPath>
-              </text>
-            </svg>
+            <div className="font-serif text-[#e4f08e] mix-blend-overlay opacity-90 drop-shadow-md flex items-center justify-center -space-x-2 lg:-space-x-4">
+              <span className="text-[32vw] leading-none transform translate-y-3">L</span>
+              <span className="text-[20vw] leading-none transform -translate-y-6">U</span>
+              <span className="text-[23vw] leading-none transform -translate-y-2">X</span>
+              <span className="text-[20vw] leading-none transform -translate-y-5">U</span>
+              <span className="text-[22vw] leading-none transform -translate-y-1">R</span>
+              <span className="text-[32vw] leading-none transform translate-y-2">Y</span>
+            </div>
           </div>
           
           <div className="mt-auto flex flex-col items-center">

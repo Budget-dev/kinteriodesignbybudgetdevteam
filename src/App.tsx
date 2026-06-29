@@ -66,7 +66,7 @@ export default function App() {
 
       {/* Mobile Sidebar */}
       <div 
-        className={`fixed inset-0 bg-[#050505] z-40 transition-transform duration-500 ease-in-out flex flex-col justify-center items-center ${
+        className={`fixed inset-0 bg-black/80 backdrop-blur-md z-40 transition-transform duration-500 ease-in-out flex flex-col justify-center items-center ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } lg:hidden`}
       >

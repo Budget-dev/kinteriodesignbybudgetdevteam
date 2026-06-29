@@ -2,6 +2,10 @@ import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Contact() {
+  React.useEffect(() => {
+    document.title = "Contact | K Interior Design";
+  }, []);
+
   return (
     <div className="pt-32 pb-24 px-8 max-w-[1600px] mx-auto min-h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

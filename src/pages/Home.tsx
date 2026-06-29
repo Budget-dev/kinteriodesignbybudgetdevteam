@@ -11,6 +11,10 @@ import balconyImg from '../assets/images/balcony_1782752112964.jpg';
 export default function Home() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
+  React.useEffect(() => {
+    document.title = "Home | K Interior Design";
+  }, []);
+
   return (
     <>
       {/* Hero Section */}

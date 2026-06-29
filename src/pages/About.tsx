@@ -2,6 +2,10 @@ import React from 'react';
 import livingImg from '../assets/images/living_room_1782752059232.jpg';
 
 export default function About() {
+  React.useEffect(() => {
+    document.title = "About Us | K Interior Design";
+  }, []);
+
   return (
     <div className="pt-32 pb-24 px-8 max-w-[1600px] mx-auto min-h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

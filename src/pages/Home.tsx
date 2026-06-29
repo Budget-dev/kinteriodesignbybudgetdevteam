@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Play, ArrowRight, PenTool, CheckSquare, Clock, Users, ChevronsDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 import livingImg from '../assets/images/living_room_1782752059232.jpg';
@@ -9,10 +9,22 @@ import wardrobesImg from '../assets/images/wardrobes_1782752102044.jpg';
 import balconyImg from '../assets/images/balcony_1782752112964.jpg';
 
 export default function Home() {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   return (
     <>
       {/* Hero Section */}
       <section className="relative w-full h-[100dvh] lg:h-[95vh] lg:min-h-[700px] flex items-center justify-center lg:justify-start">
+        {/* Loading Screen */}
+        {!isVideoLoaded && (
+          <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#050505]">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center relative">
+              <span className="text-white font-serif text-2xl leading-none italic z-10">KV</span>
+              <div className="absolute inset-0 border-2 border-white/10 border-t-gold rounded-full animate-spin"></div>
+            </div>
+          </div>
+        )}
+
         {/* Background Image & Overlay */}
         <div className="absolute inset-0 w-full h-full">
           <video 
@@ -20,7 +32,8 @@ export default function Home() {
             loop 
             muted 
             playsInline
-            className="w-full h-full object-cover object-center lg:object-right"
+            onLoadedData={() => setIsVideoLoaded(true)}
+            className={`w-full h-full object-cover object-center lg:object-right transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
             src="https://vennky.sirv.com/Firefly%20Create%20an%208-second%20ultra-realistic%204K%20cinematic%20interior%20video%20using%20the%20provided%20image%20as%20t.mp4"
           />
           {/* Mobile specific gradient overlay */}
